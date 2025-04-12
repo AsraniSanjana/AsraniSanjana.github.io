@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const sheetId = 'YOUR_SHEET_ID';
-    const gid = 'YOUR_GID'; // Tab's gid
+    const sheetId = '1LJeX3N3Uvfew29LR_xo13nJTCJ6vqBQaawZJT0yZNwY';
+    const gid = '0'; // Tab's gid
     const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${gid}`;
   
     fetch(url)
