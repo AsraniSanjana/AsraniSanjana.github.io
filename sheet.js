@@ -1,20 +1,25 @@
-document.addEventListener('DOMContentLoaded', function () {
-    Tabletop.init({
-      key: '1LJeX3N3Uvfew29LR_xo13nJTCJ6vqBQaawZJT0yZNwY', // ← Replace this!
-      callback: function (data, tabletop) {
+document.addEventListener('DOMContentLoaded', () => {
+    const sheetId = 'YOUR_SHEET_ID';
+    const gid = 'YOUR_GID'; // Tab's gid
+    const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${gid}`;
+  
+    fetch(url)
+      .then(res => res.text())
+      .then(csv => {
+        const rows = csv.trim().split('\n').map(row => row.split(','));
         const container = document.getElementById('sheet-data');
         let html = '<table><thead><tr>';
-        
+  
         // Headers
-        Object.keys(data[0]).forEach(key => {
-          html += `<th>${key}</th>`;
+        rows[0].forEach(header => {
+          html += `<th>${header}</th>`;
         });
         html += '</tr></thead><tbody>';
   
-        // Rows
-        data.forEach(row => {
+        // Data rows
+        rows.slice(1).forEach(row => {
           html += '<tr>';
-          Object.values(row).forEach(cell => {
+          row.forEach(cell => {
             html += `<td>${cell}</td>`;
           });
           html += '</tr>';
@@ -22,8 +27,10 @@ document.addEventListener('DOMContentLoaded', function () {
   
         html += '</tbody></table>';
         container.innerHTML = html;
-      },
-      simpleSheet: true
-    });
+      })
+      .catch(err => {
+        document.getElementById('sheet-data').innerHTML = 'Failed to load data.';
+        console.error('Error fetching CSV:', err);
+      });
   });
   
