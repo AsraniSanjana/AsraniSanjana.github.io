@@ -1,19 +1,87 @@
 body {
-    font-family: sans-serif;
+    background-color: #000000;
+    color: #eaeaea;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
     padding: 2rem;
   }
   
+  .container {
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #c3a6ff;
+  }
+  
+  .topic-tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .topic-link {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #2e2f45;
+    color: #eaeaea;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  
+  .topic-link:hover {
+    background-color: #444561;
+  }
+  
+  .topic-link.active-tab {
+    background-color: #676b94;
+    font-weight: bold;
+    box-shadow: 0 0 5px #a688fa;
+  }
+  
   table {
-    border-collapse: collapse;
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #2e2f45;
+    border-radius: 10px;
+    overflow: hidden;
   }
   
   th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    padding: 0.75rem;
+    border: 1px solid #35364e;
+    text-align: left;
+    vertical-align: top;
+    white-space: pre-wrap;
+    word-break: break-word;
   }
   
   th {
-    background-color: #f2f2f2;
+    background-color: rgb(19, 21, 59);
+    color: #ffffff;
   }
+  
+  /* .blog-box {
+    background-color: #2e2f45;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 10px #00000022;
+    color: #f1f1f1;
+  } */
+  
+  /* .blog-box p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+  } */
+  
+  /* .blog-box strong {
+    color: #c3a6ff;
+  } */
   

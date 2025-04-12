@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Live Sheet CSV</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data View</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
-  <h1>📈 Live Sheet from CSV</h1>
-  <div id="sheet-data">Loading data...</div>
+  <div class="container">
+    <h1>Payments 101</h1>
+
+    <ul class="topic-tabs">
+      <li><a href="#" class="topic-link" data-gid="0" data-title="transactions">General transactions</a></li>
+      <li><a href="#" class="topic-link" data-gid="806648639" data-title="dataelements">Data elements</a></li>
+      <li><a href="#" class="topic-link" data-gid="2076186627" data-title="dpdp">DPDP</a></li>
+    </ul>
+
+    <h2 id="topic-title"></h2>
+    <div id="blog-context" class="blog-box"></div>
+    <div id="sheet-data">Select a topic above to load its data ✨</div>
+  </div>
 
   <script src="sheet.js"></script>
+
 </body>
 </html>
